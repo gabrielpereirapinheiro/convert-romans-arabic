@@ -1,3 +1,12 @@
+/*TRABALHO DE METODOS DE PROGRAMACAO
+*
+* ALUNO : GABRIEL PEREIRA PINHEIRO
+* MATRICULA: 14/0020764
+* UNIVERSIDADE DE BRASILIA
+* DEPARTAMENTO DE CIENCIA DA COMPUTACAO
+* PROFESSOR: JAN MENDONCA
+*/
+
 #include "bibliotecas.h"
 
 int converte_valor(char letra)
@@ -53,28 +62,51 @@ void transfere_string_int(char *string,int *vetor,int size)
 
 int valor_total(int *vetor,int tamanho)
 {
-	int i,total=0,invalido=0;
+	int i,total=0,invalido=0,passado=0,repetido=0;
+
     for (int i = 0; i < tamanho; ++i)
     {
     	if(vetor[i]<vetor[i+1] && i+1<tamanho)
     	{
+    		if(vetor[i] == passado)
+    		{
+    			printf(" S %d \n",repetido+1 );
+    			repetido++;
+    		}
     		total = (vetor[i+1] - vetor[i]) + total;
     		i = i + 1;
     	}
     	else
-    	{
-    		
+    	{    		
     		total = total + vetor[i] ;
     	}
-    	if(vetor[i]==-1)
+    	if (passado == vetor[i])
+    	{
+    		repetido++;
+    		printf("A%d\n", repetido);
+    	}
+    	
+    	if(repetido!=0 && repetido!=3)
+    	{
+    		if (vetor[i]!=passado)
+    		{
+    			repetido=0;
+    		}
+    	}
+    	printf(" ree %dn",repetido);
+
+    	if(vetor[i]==-1 || repetido==3)
     	{
     		invalido=1;
     	}
+    	passado = vetor[i];
+    	
     }
     if(invalido!=0)
     {
     	total=-1;
     }
+
     return total;
 }
 
