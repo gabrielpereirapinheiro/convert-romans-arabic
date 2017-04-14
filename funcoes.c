@@ -53,7 +53,7 @@ void transfere_string_int(char *string,int *vetor,int size)
 
 int valor_total(int *vetor,int tamanho)
 {
-	int i,total,invalido=0;
+	int i,total=0,invalido=0;
     for (int i = 0; i < tamanho; ++i)
     {
     	if(vetor[i]<vetor[i+1] && i+1<tamanho)
@@ -63,6 +63,7 @@ int valor_total(int *vetor,int tamanho)
     	}
     	else
     	{
+    		
     		total = total + vetor[i] ;
     	}
     	if(vetor[i]==-1)
