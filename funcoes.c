@@ -93,8 +93,6 @@ int valor_total(int *vetor,int tamanho)
     			repetido=0;
     		}
     	}
-    	printf(" ree %dn",repetido);
-
     	if(vetor[i]==-1 || repetido==3)
     	{
     		invalido=1;

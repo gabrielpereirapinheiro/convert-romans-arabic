@@ -17,6 +17,7 @@ int main()
     int tamanho;
     int total;
 
+    printf("\n");
     printf("DIGITE A STRING A SER CONVERTIDA ->");
     scanf("%s",string);
 
