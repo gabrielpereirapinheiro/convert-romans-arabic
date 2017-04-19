@@ -18,6 +18,8 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("DXXVII")==527);
 		REQUIRE(converte("xx")==-1);
 		REQUIRE(converte("XXXX")==-1);
+		REQUIRE(converte("CXXXVII")==137);
+		REQUIRE(converte("CCM")==-1);
 	}
 }
 

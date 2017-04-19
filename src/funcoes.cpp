@@ -12,7 +12,6 @@
 
 int converte_valor(char letra)
 {
-
 	int valor_retornado;
 
 	switch(letra)
@@ -101,7 +100,7 @@ int valor_total(int *vetor,int tamanho)
     	if (passado == vetor[i])
     	{
     		repetido++;
-    		printf("A%d\n", repetido);
+    		printf("A %d\n", repetido);
     	}
     	
     	if(repetido!=0 && repetido!=3)
@@ -114,7 +113,7 @@ int valor_total(int *vetor,int tamanho)
 
     	if(vetor[i]==-1 || repetido==3)
     	{
-            printf("IMM");
+            printf("IM M");
     		invalido=1;
             break;
     	}
@@ -127,16 +126,4 @@ int valor_total(int *vetor,int tamanho)
     }
 
     return total;
-}
-
-void mostra_resultados(int total, char *string,int tamanho )
-{
-	if(total!=-1)
-	{
-		printf("O numero romano %s convertido é igual a %d \n",string,total );
-	}
-	else
-	{
-		printf("Numero inválido !\n");
-	}
 }
