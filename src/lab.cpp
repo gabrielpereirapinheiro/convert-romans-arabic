@@ -35,7 +35,6 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("MMMMM")==-1);
 		REQUIRE(converte("LM")==-1);
 		REQUIRE(converte("ID")==-1);
-			
 	}
 }
 
