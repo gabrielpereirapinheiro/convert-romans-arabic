@@ -12,19 +12,30 @@
 
 TEST_CASE("TESTE","teste")
 {
-	SECTION("SESSAO TESTE")
+	SECTION("SESSAO TESTE NUMEROS CORRETOS")
 	{
+	
+		REQUIRE(converte("DCCCXC")==890);
+		REQUIRE(converte("XI")==11);
+		REQUIRE(converte("LXI")==61);
+		REQUIRE(converte("DCCLXXVIII")==778);
+		REQUIRE(converte("DCLXXII")==672);
 		REQUIRE(converte("XL")==40);
-		REQUIRE(converte("DXXVII")==527);
-		REQUIRE(converte("xx")==-1);
-		REQUIRE(converte("XXXX")==-1);
-		REQUIRE(converte("CXXXVII")==137);
+		REQUIRE(converte("XC")==90);
+		REQUIRE(converte("LXXX")==80);
+		REQUIRE(converte("CML")==950);
 
-		/*I so pode aparecer antes de V e X*/
-		REQUIRE(converte("IL")==-1);
-		REQUIRE(converte("IC")==-1);
-		REQUIRE(converte("IM")==-1);
-		REQUIRE(converte("IDX")==-1);
+	}
+	SECTION("SESSAO TESTE NUMEROS INVALIDOS")
+	{
+		REQUIRE(converte("XXXXL")==-1);
+		REQUIRE(converte("XxL")==-1);
+		REQUIRE(converte("XD")==-1);
+		REQUIRE(converte("XM")==-1);
+		REQUIRE(converte("MMMMM")==-1);
+		REQUIRE(converte("LM")==-1);
+		REQUIRE(converte("ID")==-1);
+			
 	}
 }
 

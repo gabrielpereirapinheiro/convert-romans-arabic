@@ -84,23 +84,47 @@ int valor_total(int *vetor,int tamanho)
     for (int i = 0; i < tamanho; ++i)
     {
     	
-    	if(vetor[i]==1)/*Ve se é I*/
+    	if(vetor[i]==1)/*Ve se é I e ira ser os proximos se sao validos*/
     	{
-    		if ((vetor[i+1]!=5 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho )
+       		if ((vetor[i+1]!=5 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho ) /*Se o proximo não for I,V,X ja da erro*/
     		{
     			invalido=1;
     			break;
     		}
     	}
-
+    	if(vetor[i]==10) /*Ve se e X e ira ver se os proximos sao validos*/
+    	{
+    		if(vetor[i+1]!=50 && vetor[i+1]!=100 && vetor[i+1]!=10 && vetor[i+1]!=5 && vetor[i+1]!=1&& i+1<tamanho)
+    		{
+    			invalido=1;
+    			break;
+    		}
+    	}
+        if(vetor[i]==50)/*Ve se e C e ira ver se os proximos sao validos*/
+        {
+            if ((vetor[i+1]==1000 || vetor[i+1]==500 ) && i+1<tamanho  )
+            {
+                invalido=1;
+                break;
+            }
+        }
 
     	if(vetor[i]<vetor[i+1] && i+1<tamanho && vetor[i] != -1)
     	{
     		if(vetor[i] == passado)
     		{
-    			printf(" S %d \n",repetido+1 );
     			repetido++;
     		}
+            else
+            {
+                if(repetido!=0 && repetido!=4)
+                {
+                    if (vetor[i]!=passado)
+                    {
+                        repetido=0;
+                    }
+                }
+            }
     		total = (vetor[i+1] - vetor[i]) + total;
     		i = i + 1;
     	}
@@ -110,12 +134,16 @@ int valor_total(int *vetor,int tamanho)
     	}
     	if (passado == vetor[i]) /*Acrescenta repetido*/
     	{
+            //printf("RE = %d e v %d em %d\n", repetido+1,vetor[i],i );
     		repetido++;
     	}
+
     	if(repetido!=0 && repetido!=3) /*Zera o repetido */
     	{
+            //printf("oi %d %d em %d\n",vetor[i],passado,i );
     		if (vetor[i]!=passado)
     		{
+                //printf("zerou %d\n",i );
     			repetido=0;
     		}
     	}
