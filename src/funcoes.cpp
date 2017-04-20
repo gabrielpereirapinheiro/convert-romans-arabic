@@ -83,6 +83,17 @@ int valor_total(int *vetor,int tamanho)
 
     for (int i = 0; i < tamanho; ++i)
     {
+    	
+    	if(vetor[i]==1)/*Ve se é I*/
+    	{
+    		if ((vetor[i+1]!=5 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho )
+    		{
+    			invalido=1;
+    			break;
+    		}
+    	}
+
+
     	if(vetor[i]<vetor[i+1] && i+1<tamanho && vetor[i] != -1)
     	{
     		if(vetor[i] == passado)
@@ -97,13 +108,11 @@ int valor_total(int *vetor,int tamanho)
     	{    		
     		total = total + vetor[i] ;
     	}
-    	if (passado == vetor[i])
+    	if (passado == vetor[i]) /*Acrescenta repetido*/
     	{
     		repetido++;
-    		printf("A %d\n", repetido);
     	}
-    	
-    	if(repetido!=0 && repetido!=3)
+    	if(repetido!=0 && repetido!=3) /*Zera o repetido */
     	{
     		if (vetor[i]!=passado)
     		{
@@ -111,9 +120,8 @@ int valor_total(int *vetor,int tamanho)
     		}
     	}
 
-    	if(vetor[i]==-1 || repetido==3)
+    	if(vetor[i]==-1 || repetido==3) /*Caso tenha retornado um valor invalido da funcao converte ou seja 3 vezes repetido*/
     	{
-            printf("IM M");
     		invalido=1;
             break;
     	}

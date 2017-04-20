@@ -19,7 +19,12 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("xx")==-1);
 		REQUIRE(converte("XXXX")==-1);
 		REQUIRE(converte("CXXXVII")==137);
-		REQUIRE(converte("CCM")==-1);
+
+		/*I so pode aparecer antes de V e X*/
+		REQUIRE(converte("IL")==-1);
+		REQUIRE(converte("IC")==-1);
+		REQUIRE(converte("IM")==-1);
+		REQUIRE(converte("IDX")==-1);
 	}
 }
 
