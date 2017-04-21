@@ -10,46 +10,50 @@
 #include <ctype.h>
 #include "bibliotecas.hpp"
 
+/*Funcao que ira converter o valor da letra e retornar um numero*/
 int converte_valor(char letra)
 {
+    /*Variavel que ira receber o valor da letra*/
 	int valor_retornado;
 
 	switch(letra)
 	{
+        /*Caso seja I*/
 		case 'I':
 			valor_retornado = 1;
 			break;
-
+        /*Caso seja V*/
 		case 'V':
 			valor_retornado = 5;
 			break;
-				
+		/*Caso seja X*/		
 		case 'X':
 			valor_retornado = 10;
 			break;
-
+        /*Caso seja L*/
 		case 'L':
 			valor_retornado = 50;
 			break;	
-
+        /*Caso seja C*/
 		case 'C':
 			valor_retornado = 100;
 			break;	
-
+        /*Caso seja D*/
 		case 'D':
 			valor_retornado = 500;
 			break;		
-
+        /*Caso seja M*/
 		case 'M':
 			valor_retornado = 1000;
 			break;
-
+        /*Caso nao seja nenhuma dessas letras*/
 		default :
 			valor_retornado=-1;	
 	}
 
 	return valor_retornado;
 }
+/*Funcao que recebe a string passada na funcao princial e ira converter para um vetor de inteiro*/
 void transfere_string_int(char const *string,int *vetor,int size)
 {
 	int i;
@@ -59,7 +63,7 @@ void transfere_string_int(char const *string,int *vetor,int size)
     	vetor[i] = converte_valor(string[i]);
     }
 }
-
+/*Funcao principal, ira chamar as outras funcoes e retornar o valor do numero romano caso seja valido*/
 int converte(char const *string)
 {
     int vetor[30];
@@ -85,7 +89,7 @@ int converte(char const *string)
     
     return total;
 }
-
+/*Funcao que ira analisar o vetor e verificar se e um numero valido*/
 int analisa(int *vetor,int tamanho)
 {
     int invalido=0;
@@ -145,7 +149,7 @@ int analisa(int *vetor,int tamanho)
 
     return invalido;
 }
-
+/*Funcao que ira receber um vetor e ira calcular o valor desse numero romano e retornar o valor caso seja valido*/
 int valor_total(int *vetor,int tamanho)
 {
     int i,total=0,invalido=0,passado=0,repetido=0;

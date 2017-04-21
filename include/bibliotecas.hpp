@@ -18,3 +18,5 @@ void transfere_string_int(char *string,int *vetor,int size);
 int valor_total(int *vetor,int tamanho);
 
 int converte(char const *string);
+
+int analisa(int *vetor,int tamanho);
