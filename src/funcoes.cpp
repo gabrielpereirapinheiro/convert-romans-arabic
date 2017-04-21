@@ -7,6 +7,7 @@
 * PROFESSOR: JAN MENDONCA
 */
 
+
 #include <ctype.h>
 #include "bibliotecas.hpp"
 
@@ -59,7 +60,8 @@ void transfere_string_int(char const *string,int *vetor,int size)
 	int i;
 
 	for (int i = 0; i <  size; ++i)
-    {
+    { 
+        /*Vetor i ira receber o valor da letra romana*/
     	vetor[i] = converte_valor(string[i]);
     }
 }
@@ -67,10 +69,15 @@ void transfere_string_int(char const *string,int *vetor,int size)
 int converte(char const *string)
 {
     int vetor[30];
+    //Vetor de no maximo 30 caracteres
     int valor;
+    //valor retornador
     int tamanho;
+    //tamanho da string
     int total;
+    //total do numero romano
     int valor_analisa=0;
+    //caso seja valido
  	
     tamanho = strlen (string);
 
