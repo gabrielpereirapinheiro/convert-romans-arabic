@@ -14,6 +14,7 @@ TEST_CASE("TESTE","teste")
 {
 	SECTION("SESSAO TESTE NUMEROS CORRETOS")
 	{
+		/*Sessao de testes que ira testar numeros corretor*/
 	
 		REQUIRE(converte("DCCCXC")==890);
 		REQUIRE(converte("XI")==11);
@@ -24,10 +25,15 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("XC")==90);
 		REQUIRE(converte("LXXX")==80);
 		REQUIRE(converte("CML")==950);
+		REQUIRE(converte("MX")==1010);
+		REQUIRE(converte("MDXLI")==1541);
+		REQUIRE(converte("MMXXXIII")==2033);
 
 	}
+
 	SECTION("SESSAOO TESTE NUMEROS INVALIDOS")
 	{
+		/*Sessao de testes que ira testar numeros invalidos*/
 		REQUIRE(converte("XXXXL")==-1);
 		REQUIRE(converte("XxL")==-1);
 		REQUIRE(converte("XD")==-1);

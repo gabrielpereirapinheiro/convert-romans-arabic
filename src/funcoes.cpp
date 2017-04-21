@@ -82,14 +82,16 @@ int converte(char const *string)
     tamanho = strlen (string);
 
     transfere_string_int(string,vetor,tamanho);
-
+    /*Valor analisa recebe se o vetor e valido*/
     valor_analisa = analisa(vetor,tamanho);
+    /*Caso o vetor nao seja, retorna -1*/
     if(valor_analisa==1)
     {
         total = -1;
     }
     else
-    {
+    {   
+        /*Caso o vetor seja valido, vai para o total*/
         total = valor_total(vetor,tamanho);
     }
    
@@ -108,16 +110,19 @@ int analisa(int *vetor,int tamanho)
         {
             if ((vetor[i+1]!=5 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho ) /*Se o proximo não for I,V,X ja da erro*/
             {
-           
+           printf("c\n");
                 invalido=1;
                 break;
             }
-            if(vetor[i+1]==1)
+
+            if(vetor[i+1]==1) /*Sem tem dois II seguidos os proximos numeros tem que ser I tambem */
             {   
                 for (int j = i; j < tamanho; ++j)
                 {
                     if(vetor[j]!=1)
                     {
+                        printf("e\n");
+                    /* se nem todos os proximos forem i, numero invalido*/
                         invalido=1;
                         break;
                     }
@@ -128,7 +133,7 @@ int analisa(int *vetor,int tamanho)
         {
             if(vetor[i+1]!=50 && vetor[i+1]!=100 && vetor[i+1]!=10 && vetor[i+1]!=5 && vetor[i+1]!=1&& i+1<tamanho)
             {
-             
+             printf("d\n");
                 invalido=1;
                 break;
             }
@@ -137,16 +142,16 @@ int analisa(int *vetor,int tamanho)
         {
             if (vetor[i+1]!=1  && i+1<tamanho )
             {
-           
+            printf("c\n");
                 invalido=1;
                 break;
             }
         }
         if(vetor[i]==50)/*Ve se e C e ira ver se os proximos sao validos*/
         {
-            if ((vetor[i+1]!=1000 && vetor[i+1]!=500 && vetor[i+1]!=10) && i+1<tamanho  )
+            if ((vetor[i+1]!=1000 && vetor[i+1]!=500 && vetor[i+1]!=10 &&vetor[i+1]!=1) && i+1<tamanho  )
             {
-              
+              printf("b\n");
                 invalido=1;
                 break;
             }
@@ -222,10 +227,9 @@ int valor_total(int *vetor,int tamanho)
 
     	if(repetido!=0 && repetido!=3) /*Zera o repetido */
     	{
-            //printf("oi %d %d em %d\n",vetor[i],passado,i );
     		if (vetor[i]!=passado)
     		{
-                //printf("zerou %d\n",i );
+                printf("1\n");
     			repetido=0;
     		}
     	}
@@ -238,6 +242,7 @@ int valor_total(int *vetor,int tamanho)
     	passado = vetor[i];
     	
     }
+    /*NUmero invalido, retorna -1*/
     if(invalido!=0)
     {
     	total=-1;
