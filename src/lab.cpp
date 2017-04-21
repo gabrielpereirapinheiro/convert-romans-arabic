@@ -26,15 +26,20 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("CML")==950);
 
 	}
-	SECTION("SESSAO TESTE NUMEROS INVALIDOS")
+	SECTION("SESSAOO TESTE NUMEROS INVALIDOS")
 	{
 		REQUIRE(converte("XXXXL")==-1);
 		REQUIRE(converte("XxL")==-1);
 		REQUIRE(converte("XD")==-1);
 		REQUIRE(converte("XM")==-1);
-		REQUIRE(converte("MMMMM")==-1);
-		REQUIRE(converte("LM")==-1);
-		REQUIRE(converte("ID")==-1);
+		REQUIRE(converte("VX")==-1);
+		REQUIRE(converte("VV")==-1);
+		REQUIRE(converte("VX")==-1);
+		REQUIRE(converte("IIX")==-1);
+		REQUIRE(converte("VV")==-1);
+		REQUIRE(converte("VX")==-1);
+		REQUIRE(converte("LC")==-1);
+
 	}
 }
 

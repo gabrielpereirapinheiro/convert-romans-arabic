@@ -66,20 +66,90 @@ int converte(char const *string)
     int valor;
     int tamanho;
     int total;
-
+    int valor_analisa=0;
  	
     tamanho = strlen (string);
 
     transfere_string_int(string,vetor,tamanho);
 
-    total = valor_total(vetor,tamanho);
+    valor_analisa = analisa(vetor,tamanho);
+    if(valor_analisa==1)
+    {
+        total = -1;
+    }
+    else
+    {
+        total = valor_total(vetor,tamanho);
+    }
+   
     
     return total;
 }
 
+int analisa(int *vetor,int tamanho)
+{
+    int invalido=0;
+
+    for (int i = 0; i < tamanho; ++i)
+    {
+      
+        if(vetor[i]==1)/*Ve se é I e ira ser os proximos se sao validos*/
+        {
+            if ((vetor[i+1]!=5 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho ) /*Se o proximo não for I,V,X ja da erro*/
+            {
+           
+                invalido=1;
+                break;
+            }
+            if(vetor[i+1]==1)
+            {   
+                for (int j = i; j < tamanho; ++j)
+                {
+                    if(vetor[j]!=1)
+                    {
+                        invalido=1;
+                        break;
+                    }
+                }
+            }
+        }
+        if(vetor[i]==10) /*Ve se e X e ira ver se os proximos sao validos*/
+        {
+            if(vetor[i+1]!=50 && vetor[i+1]!=100 && vetor[i+1]!=10 && vetor[i+1]!=5 && vetor[i+1]!=1&& i+1<tamanho)
+            {
+             
+                invalido=1;
+                break;
+            }
+        }
+        if (vetor[i]==5)
+        {
+            if (vetor[i+1]!=1  && i+1<tamanho )
+            {
+           
+                invalido=1;
+                break;
+            }
+        }
+        if(vetor[i]==50)/*Ve se e C e ira ver se os proximos sao validos*/
+        {
+            if ((vetor[i+1]!=1000 && vetor[i+1]!=500 && vetor[i+1]!=10) && i+1<tamanho  )
+            {
+              
+                invalido=1;
+                break;
+            }
+        }
+
+    }
+
+    return invalido;
+}
+
 int valor_total(int *vetor,int tamanho)
 {
-	int i,total=0,invalido=0,passado=0,repetido=0;
+    int i,total=0,invalido=0,passado=0,repetido=0;
+
 
     for (int i = 0; i < tamanho; ++i)
     {
@@ -100,6 +170,7 @@ int valor_total(int *vetor,int tamanho)
     			break;
     		}
     	}
+
         if(vetor[i]==50)/*Ve se e C e ira ver se os proximos sao validos*/
         {
             if ((vetor[i+1]==1000 || vetor[i+1]==500 ) && i+1<tamanho  )
