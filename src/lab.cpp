@@ -31,6 +31,15 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("MMCMXCIX")==2999);
 		REQUIRE(converte("XXI")==21);
 		REQUIRE(converte("XXX")==30);
+		REQUIRE(converte("CX")==110);
+		REQUIRE(converte("CCXI")==211);
+		REQUIRE(converte("MCX")==1110);
+		REQUIRE(converte("MMCMXX")==2920);
+		REQUIRE(converte("CM")==900);
+		REQUIRE(converte("MCXCVIII")==1198);
+		REQUIRE(converte("MMCDLXXXVII")==2487);
+		REQUIRE(converte("MDCCCLXXXVI")==1886);
+
 	}
 
 	SECTION("SESSAOO TESTE NUMEROS INVALIDOS")
@@ -54,6 +63,7 @@ TEST_CASE("TESTE","teste")
 		REQUIRE(converte("MMMMM")==-1);
 		REQUIRE(converte("XMXMX")==-1);
 		REQUIRE(converte("XXIO")==-1);
+		REQUIRE(converte("McX")==-1);
 
 	}
 }

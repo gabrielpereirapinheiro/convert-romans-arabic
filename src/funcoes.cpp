@@ -110,7 +110,6 @@ int analisa(int *vetor,int tamanho)
         {
             if ((vetor[i+1]!=5 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho ) /*Se o proximo não for I,V,X ja da erro*/
             {
-           printf("c\n");
                 invalido=1;
                 break;
             }
@@ -121,8 +120,7 @@ int analisa(int *vetor,int tamanho)
                 {
                     if(vetor[j]!=1)
                     {
-                        printf("e\n");
-                    /* se nem todos os proximos forem i, numero invalido*/
+                                     /* se nem todos os proximos forem i, numero invalido*/
                         invalido=1;
                         break;
                     }
@@ -133,7 +131,7 @@ int analisa(int *vetor,int tamanho)
         {
             if(vetor[i+1]!=50 && vetor[i+1]!=100 && vetor[i+1]!=10 && vetor[i+1]!=5 && vetor[i+1]!=1&& i+1<tamanho)
             {
-             printf("d\n");
+                /*Torna o numero invalido*/
                 invalido=1;
                 break;
             }
@@ -142,23 +140,23 @@ int analisa(int *vetor,int tamanho)
         {
             if (vetor[i+1]!=1  && i+1<tamanho )
             {
-            printf("c\n");
+                /*Torna o numero invalido*/
                 invalido=1;
                 break;
             }
         }
         if(vetor[i]==50)/*Ve se e C e ira ver se os proximos sao validos*/
         {
-            if ((vetor[i+1]!=1000 && vetor[i+1]!=500 && vetor[i+1]!=10 &&vetor[i+1]!=1) && i+1<tamanho  )
+            if ((vetor[i+1]!=1000 && vetor[i+1]!=500 && vetor[i+1]!=10 && vetor[i+1]!=1) && i+1<tamanho  )
             {
-              printf("b\n");
+                /*Torna o numero invalido*/
                 invalido=1;
                 break;
             }
         }
 
     }
-
+    /*0 para um numero valido e 1 para invalido*/
     return invalido;
 }
 /*Funcao que ira receber um vetor e ira calcular o valor desse numero romano e retornar o valor caso seja valido*/
@@ -221,7 +219,6 @@ int valor_total(int *vetor,int tamanho)
     	}
     	if (passado == vetor[i]) /*Acrescenta repetido*/
     	{
-            //printf("RE = %d e v %d em %d\n", repetido+1,vetor[i],i );
     		repetido++;
     	}
 
@@ -229,7 +226,6 @@ int valor_total(int *vetor,int tamanho)
     	{
     		if (vetor[i]!=passado)
     		{
-                printf("1\n");
     			repetido=0;
     		}
     	}
