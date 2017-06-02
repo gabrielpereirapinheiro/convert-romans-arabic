@@ -1,8 +1,8 @@
 # How to execute <h1> 
-Open the paste src on terminal and execute the command 
+Open the paste src on terminal and execute the command :
 >$make
 
-after execute
+After execute:
 
 >./lab 
 
@@ -14,9 +14,17 @@ ________________________________________________________________________________
 
 
 
-# Como executar <h1>
+## Como executar <h1>
 
-Para executar, acesse a pasta src e no terminal naquele diretorio execute o comando make, em seguida digite ./lab e o programa sera executado.
+Para executar, acesse a pasta src e no terminal naquele diretorio execute o comando
+
+>make
+
+Em seguida execute
+
+>./lab 
+
+E o programa sera executado.
 
 
 __________________________________________________________________________________________________________________________________________
