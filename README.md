@@ -1,6 +1,3 @@
-
-Fuction : 
-
 How to execute :
 
 Open the paste src on terminal and execute the command make, after execute ./lab and the programe will be executed.
