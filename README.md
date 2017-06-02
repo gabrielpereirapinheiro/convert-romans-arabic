@@ -1,4 +1,4 @@
-# How to execute <h1> 
+## How to execute <h1> 
 Open the paste src on terminal and execute the command :
 >$make
 
