@@ -1,10 +1,10 @@
 ## How to execute <h1> 
 Open the paste src on terminal and execute the command :
->$make
+>$ make
 
 After execute:
 
->./lab 
+>.$ /lab 
 
 and the programe will be executed.
 
@@ -18,11 +18,11 @@ ________________________________________________________________________________
 
 Para executar, acesse a pasta src e no terminal naquele diretorio execute o comando
 
->make
+>$ make
 
 Em seguida execute
 
->./lab 
+>$ ./lab 
 
 E o programa sera executado.
 
