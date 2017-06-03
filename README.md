@@ -4,7 +4,7 @@ This code translate romans numbers  to arabic numbers.
 
 Obs: Numbers less than 4000
 
-## How to execute <h1> 
+## How to execute 
 Open the paste src on terminal and execute the command :
 >$ make
 
