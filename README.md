@@ -1,3 +1,8 @@
+## Fuction
+
+This code translate romans numbers  to arabic numbers.
+Obs: Numbers less than 4000
+
 ## How to execute <h1> 
 Open the paste src on terminal and execute the command :
 >$ make
@@ -8,23 +13,6 @@ After execute:
 
 and the programe will be executed.
 
-
-
-__________________________________________________________________________________________________________________________________________
-
-
-
-## Como executar <h1>
-
-Para executar, acesse a pasta src e no terminal naquele diretorio execute o comando
-
->$ make
-
-Em seguida execute
-
->$ ./lab 
-
-E o programa sera executado.
 
 
 __________________________________________________________________________________________________________________________________________
