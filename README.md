@@ -1,12 +1,12 @@
 ## Fuction
 
--This code translate romans numbers  to arabic numbers.
+- This code translate romans numbers  to arabic numbers.
 
--Obs: Convertion to numbers ***less*** than 4000
+- Obs: Convertion to numbers ***less*** than 4000
 
 ## How to execute 
 
--Open the paste ```src``` on terminal and execute the command :
+- Open the paste ```src``` on terminal and execute the command :
 
 >$ make
 
