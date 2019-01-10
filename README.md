@@ -1,10 +1,3 @@
-## Developer
-- [Gabriel Pereira Pinheiro](https://github.com/gabrielpereirapinheiro)
-- Email: gabriel.pereira.pinheiro@gmail.com
-- University of Brasilia - Brazil
-
-________________________________________________________________________________________________________________________________________
-
 ## Fuction
 
 - This code translate romans numbers  to arabic numbers.
