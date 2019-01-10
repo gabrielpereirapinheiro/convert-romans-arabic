@@ -1,4 +1,4 @@
-## Fuction
+## Convert Romans Arabic
 
 - This code translate romans numbers  to arabic numbers.
 
